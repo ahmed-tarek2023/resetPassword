@@ -103,23 +103,7 @@
                 if (res.ok) {
                     showSuccess("Your password has been reset successfully.");
                     document.getElementById("resetForm").style.display = "none";
-                } else {
-                     res = await fetch("http://localhost:5146/api/v2/account/confirm-pass", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        token: token,
-                        Password: pass
-                    })
-                });
-                if (res.ok) {
-                    showSuccess("Your password has been reset successfully.");
-                    document.getElementById("resetForm").style.display = "none";
-                }
-                else 
+                } else {z
                     showError("Reset failed. The link may be expired or invalid.");
                 }
             } catch (err) {
